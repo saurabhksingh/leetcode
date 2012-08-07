@@ -16,10 +16,7 @@ public class ThreeSumClosest {
     {
         ThreeSumClosest threeSum = new ThreeSumClosest();
         int result = threeSum.threeSumClosest(new int[]{0,2,1,-3}, 1);
-        //for(ArrayList<Integer> triplets : result)
-        {
-            System.out.println(result);
-        }
+        System.out.println(result);
     }
 
     public int threeSumClosest(int[] num, int target)
