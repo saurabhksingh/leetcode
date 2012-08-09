@@ -97,7 +97,8 @@ public class CombinationSum {
         }
         else
         {
-            for(int i=0; i<=target/candidates[startIndex]; i++)
+            int iterateUpTo = target/candidates[startIndex];
+            for(int i=0; i<=iterateUpTo; i++)
             {
                 candidateCount[startIndex] = i;
                 populateSubSet(arrayLists, candidateCount, startIndex + 1, endIndex, candidates, target - candidates[startIndex] * i);
