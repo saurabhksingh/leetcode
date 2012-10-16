@@ -17,7 +17,7 @@ public class MinimumNumberOfCoins {
     {
         MinimumNumberOfCoins instance = new MinimumNumberOfCoins();
 
-        int result = instance.minimumCoins(new int[]{10,1,2,7,6,1,5,8}, 8);
+        int result = instance.minimumCoins(new int[]{10,1,2,7,6,1,5,8}, 18);
 
         if(result > 0)
         {
@@ -37,18 +37,6 @@ public class MinimumNumberOfCoins {
             return -1;//sum cant be done
         }
         Arrays.sort(candidates);
-        int upperIndex = candidates.length-1;
-
-        while(true)
-        {
-            if(upperIndex<0 || candidates[upperIndex--] > target) break;
-        }
-        if(upperIndex < 0)
-        {
-            return -1;//sum cant be done
-        }
-
-        candidates = Arrays.copyOfRange(candidates, 0, upperIndex+1);
         int [] result = new int[]{0};
         populateSubSet(candidates,0, candidates.length, target, new ArrayList<Integer>(), result);
 
@@ -78,7 +66,7 @@ public class MinimumNumberOfCoins {
         }
         else if(sum < target)
         {
-            for(int i = startIndex; i < endIndex; ++i)
+            for(int i = startIndex; i < input.length; ++i)
             {
                 if(input[i] > target)
                 {
