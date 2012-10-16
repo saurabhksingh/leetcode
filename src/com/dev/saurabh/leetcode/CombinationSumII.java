@@ -16,7 +16,7 @@ public class CombinationSumII {
     public static void main(String [] args)
     {
         CombinationSumII instance = new CombinationSumII();
-        ArrayList<ArrayList<Integer>> result = instance.combinationSum2(new int[]{10,1,2,7,6,1,5,8}, 8);
+        ArrayList<ArrayList<Integer>> result = instance.combinationSum2(new int[]{10,1,2,7,6,1,5,8}, 18);
         for(ArrayList<Integer> list : result)
         {
             for(int data : list)
@@ -32,10 +32,6 @@ public class CombinationSumII {
         Arrays.sort(candidates);
         int upperIndex = candidates.length-1;
 
-        while(true)
-        {
-            if(upperIndex<0 || candidates[upperIndex--] > target) break;
-        }
 
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         candidates = Arrays.copyOfRange(candidates, 0, upperIndex+1);
